@@ -27,6 +27,6 @@ def bissecao(a, b, x_inicial, err):
 
 ##### variaveis pré-definidas #####
 a, b = 2, 3 #intervalo [a,b]
-err = 10e-7 #tolerancia do erro
+err = 1e-8 #tolerancia do erro
 x_inicial = 2
 print(bissecao(a, b, x_inicial, err))
