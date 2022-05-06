@@ -33,5 +33,5 @@ def bissecao(a, b, err):
 
 ##### variaveis pré-definidas #####
 a, b = 2, 3 #intervalo [a,b]
-err = 1e-8 #tolerancia do erro
+err = 1e-7 #tolerancia do erro
 raiz = bissecao(a, b, err)
