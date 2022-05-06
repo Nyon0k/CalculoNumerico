@@ -31,5 +31,5 @@ def falsaPosicao(a, b, err):
 
 ##### variaveis pré-definidas #####
 a, b = 2, 3 #intervalo [a,b]
-err = 1e-9 #tolerancia do erro
+err = 1e-7 #tolerancia do erro
 falsaPosicao(a, b, err)
