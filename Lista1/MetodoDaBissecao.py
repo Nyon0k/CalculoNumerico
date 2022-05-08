@@ -14,8 +14,10 @@ def testeBolzano(x, y):
 
 #Executa o método da bisseção
 def bissecao(a, b, err):
+    cont = 0
     if testeBolzano(a, b) == True:
         while math.fabs(b-a)/2 > err:
+            cont += 1
             x = (a+b)/2
             if func(x) == 0:
                 print('Raiz: ', x)
@@ -25,7 +27,8 @@ def bissecao(a, b, err):
                     b = x
                 else:
                     a = x
-        print('Raiz aproximada: ', x)
+        fx = abs(func(x))
+        print('Iterações: ' + str(cont) + '\nRaiz: ' + str(x) + "\n|f(Raiz)|: " + str(fx))
         return
     else:
         print('Não há raiz nesse intervalo')

@@ -1,6 +1,8 @@
 import math
 import numpy as np
 
+dados = [] #salvar iterações e |f(Raiz)|
+
 #Executa o cálculo da função de entrada
 def f(x):
     f_result = (x*(math.log10(x)))-1
@@ -13,13 +15,17 @@ def derivada(x):
 
 #Executa o método da bisseção
 def secante(x0, x1, err):
+    cont = 0
     if math.fabs(f(x0)) <= err:
         return x0
     if math.fabs(f(x1)) <= err:
         return x1
     while True:
+        cont += 1
         x2 = x1-f(x1)*((x1-x0)/(f(x1)-f(x0)))
         if math.fabs(f(abs(x2))) <= err:
+            dados.append(cont)
+            dados.append(abs(f(x2)))
             return x2
         x0 = x1
         x1 = x2
@@ -28,4 +34,5 @@ def secante(x0, x1, err):
 a, b = 2, 3 #intervalo [a,b]
 x_inicial1, x_inicial2 = 2, 3
 err = 1e-7 #tolerancia do erro
-print('Raiz aproximada:', secante(x_inicial1, x_inicial2, err))
+raiz = secante(x_inicial1, x_inicial2, err)
+print('Iterações: ' + str(dados[0]) + '\nRaiz: ' + str(raiz) + "\n|f(Raiz)|: " + str(dados[1]))
