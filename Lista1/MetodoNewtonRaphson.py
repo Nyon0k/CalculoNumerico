@@ -5,14 +5,14 @@ dados = [] #salvar iterações e |f(Raiz)|
 
 #Executa o cálculo da função de entrada
 def f(x):
-    # f_result = (x*m.log10(x))-1
-    f_result = (x**3)-(2*x)+1 #código questão 3
+    f_result = (x*m.log10(x))-1 #função da questão 1
+    # f_result = (x**3)-(2*x)+1 #código questão 3
     return f_result
 
 #Executa o cálculo da função derivada
 def derivada(x):
-    # d_result = m.log10(x)+1/np.log(10)
-    d_result = 3*(x**2)-2 #código questão 3
+    d_result = m.log10(x)+1/np.log(10) #derivada da função da questão 1
+    # d_result = 3*(x**2)-2 #código questão 3
     return d_result
 
 #Executa o método da bisseção
